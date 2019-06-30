@@ -1,8 +1,13 @@
+use std::fmt::Display;
 use std::io::{self, BufRead};
 
 /// We want a generic function that takes any type that implements the
 /// iterator interface and yields printable items.
-fn process_lines(lines: impl Iterator<Item = String>) {
+fn process_lines<I>(lines: I)
+where
+    I: Iterator,
+    I::Item: Display,
+{
     for line in lines {
         println!("ok {}", line);
     }
