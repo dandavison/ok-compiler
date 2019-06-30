@@ -20,7 +20,7 @@ fn f1() {
 
 
 fn f2() {
-    let mut s = String::from("gravity"); // warning: variable does not need to be mutable
+    let s = String::from("gravity"); // with `mut s`: warning: variable does not need to be mutable
     let r: &String = &s;
     println!("{}", r);
     let mut ss = s.clone();
