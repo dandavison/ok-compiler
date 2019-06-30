@@ -2,10 +2,7 @@ use std::io::{self, BufRead};
 
 /// We want a generic function that takes any type that implements the
 /// iterator interface and yields printable items.
-fn process_lines<I>(lines: I)
-where
-    I: Iterator<Item = String>,
-{
+fn process_lines(lines: impl Iterator<Item = String>) {
     for line in lines {
         println!("ok {}", line);
     }
