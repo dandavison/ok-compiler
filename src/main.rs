@@ -1,6 +1,6 @@
-mod ok_generic;
-mod ok_reference;
 mod ok_struct;
+mod ok_reference;
+mod ok_generic;
 
 
 fn main() {
