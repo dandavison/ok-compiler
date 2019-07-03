@@ -4,16 +4,14 @@ struct MyStruct {
     k2: String,
 }
 
-
-fn make_a_struct() -> MyStruct {
+fn f1() -> MyStruct {
     MyStruct {
         k1: 0,
         k2: "my_string".to_string(),
     }
 }
 
-
 pub fn main() {
-    let my_struct = make_a_struct();
+    let my_struct = f1();
     println!("{:?}", my_struct);
 }
