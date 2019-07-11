@@ -1,4 +1,5 @@
 mod ok_generic;
+mod ok_indexing;
 mod ok_reference;
 mod ok_struct;
 mod ok_syntect;
@@ -11,4 +12,5 @@ fn main() {
     ok_generic::main();
     ok_vector::main();
     ok_syntect::main();
+    ok_indexing::main();
 }
