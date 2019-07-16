@@ -3,9 +3,9 @@ mod ok_indexing;
 mod ok_reference;
 mod ok_struct;
 mod ok_struct_setter;
+mod ok_struct_wrapper;
 mod ok_syntect;
 mod ok_vector;
-
 
 fn main() {
     ok_struct::main();
@@ -15,4 +15,5 @@ fn main() {
     ok_syntect::main();
     ok_indexing::main();
     ok_struct_setter::main();
+    ok_struct_wrapper::main();
 }
