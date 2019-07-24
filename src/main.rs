@@ -1,6 +1,7 @@
 mod ok_cansi;
 mod ok_generic;
 mod ok_indexing;
+mod ok_iterator;
 mod ok_reference;
 mod ok_struct;
 mod ok_struct_setter;
@@ -18,4 +19,5 @@ fn main() {
     ok_struct_setter::main();
     ok_struct_wrapper::main();
     ok_cansi::main();
+    ok_iterator::main();
 }
