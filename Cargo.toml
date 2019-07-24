@@ -7,3 +7,4 @@ edition = "2018"
 [dependencies]
 cansi = "2.0.0"
 syntect = "3.2"
+unicode-segmentation = "1.3.0"
