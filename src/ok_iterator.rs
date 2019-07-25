@@ -34,6 +34,13 @@ where
     }
 }
 
+fn consume_whitespace<I>(it: I) -> usize
+where
+    I: Iterator<Item = char>,
+{
+    it.take_while(|c| *c == ' ').count()
+}
+
 pub fn main() {
     {
         let ss = vec!["x".to_string()];
@@ -55,6 +62,16 @@ pub fn main() {
         let s = "  aaa";
         let mut it = s.chars();
         let n = (&mut it).take_while(|c| *c == ' ').count();
+        println!(
+            "consumed: {}, remaining: {}",
+            n,
+            it.collect::<String>().len()
+        );
+    }
+    {
+        let s = "  aaa";
+        let mut it = s.chars();
+        let n = consume_whitespace(&mut it);
         println!(
             "consumed: {}, remaining: {}",
             n,
