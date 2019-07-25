@@ -51,4 +51,14 @@ pub fn main() {
         f3(ss.by_ref());
         println!("{}", ss.count());
     }
+    {
+        let s = "  aaa";
+        let mut it = s.chars();
+        let n = (&mut it).take_while(|c| *c == ' ').count();
+        println!(
+            "consumed: {}, remaining: {}",
+            n,
+            it.collect::<String>().len()
+        );
+    }
 }
