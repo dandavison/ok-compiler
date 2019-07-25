@@ -16,6 +16,15 @@ where
     }
 }
 
+fn f21<'a, I>(ss: I)
+where
+    I: IntoIterator<Item = &'a String>,
+{
+    for s in ss {
+        println!("{}", s);
+    }
+}
+
 fn f3<'a, I>(ss: I)
 where
     I: IntoIterator<Item = (usize, &'a str)>,
@@ -34,6 +43,7 @@ pub fn main() {
     {
         let ss = vec!["x".to_string()];
         f2(&ss);
+        f21(&ss);
         println!("{}", ss.len());
     }
     {
