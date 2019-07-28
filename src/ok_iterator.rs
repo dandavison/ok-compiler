@@ -78,4 +78,28 @@ pub fn main() {
             it.collect::<String>().len()
         );
     }
+    {
+        let mut it = "feather".chars();
+        it.next();
+        for c in it.by_ref().take(2) {
+            println!("{}", c);
+        }
+        println!("--------------------");
+        for c in it.take(2) {
+            println!("{}", c);
+        }
+    }
+    {
+        println!("\n\n\n\n");
+        let mut it = "gravity".chars();
+        let itr = it.by_ref();
+        itr.next();
+        for c in itr.take(2) {
+            println!("{}", c);
+        }
+        println!("--------------------");
+        for c in itr.take(2) {
+            println!("{}", c);
+        }
+    }
 }
