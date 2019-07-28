@@ -3,6 +3,7 @@ mod ok_enum;
 mod ok_generic;
 mod ok_indexing;
 mod ok_iterator;
+mod ok_map;
 mod ok_reference;
 mod ok_struct;
 mod ok_struct_setter;
@@ -22,4 +23,5 @@ fn main() {
     ok_cansi::main();
     ok_iterator::main();
     ok_enum::main();
+    ok_map::main();
 }
