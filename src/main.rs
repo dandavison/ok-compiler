@@ -10,6 +10,7 @@ mod ok_struct_setter;
 mod ok_struct_wrapper;
 mod ok_syntect;
 mod ok_vector;
+mod ok_string;
 
 fn main() {
     ok_struct::main();
@@ -24,4 +25,5 @@ fn main() {
     ok_iterator::main();
     ok_enum::main();
     ok_map::main();
+    ok_string::main();
 }
