@@ -2,7 +2,7 @@ fn f(s: &str) -> &str {
     s
 }
 
-fn main() {
+pub fn main() {
     for s in vec!["x".to_string()].iter().map(|s| f(s)) {
         println!("{}", s);
     }
