@@ -4,12 +4,12 @@ mod ok_generic;
 mod ok_indexing;
 mod ok_iterator;
 mod ok_reference;
+mod ok_string;
 mod ok_struct;
 mod ok_struct_setter;
 mod ok_struct_wrapper;
 mod ok_syntect;
 mod ok_vector;
-mod ok_string;
 
 fn main() {
     ok_struct::main();
