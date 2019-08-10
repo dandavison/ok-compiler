@@ -6,4 +6,8 @@ pub fn main() {
     println!("s[1..] = {}", &s[1..]);
     let s = vec![7];
     println!("s[1..] = {:?}", &s[1..]);
+
+    for i in 2..=2 {
+        println!("{}", i);
+    }
 }
