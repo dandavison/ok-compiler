@@ -5,6 +5,7 @@ authors = ["Dan Davison <dandavison7@gmail.com>"]
 edition = "2018"
 
 [dependencies]
+ansi_term = "^0.12.1"
 cansi = "2.0.0"
 syntect = "3.2"
 unicode-segmentation = "1.3.0"

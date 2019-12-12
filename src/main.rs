@@ -1,3 +1,4 @@
+mod ok_ansi_term;
 mod ok_cansi;
 mod ok_enum;
 mod ok_generic;
@@ -13,6 +14,7 @@ mod ok_syntect;
 mod ok_vector;
 
 fn main() {
+    ok_ansi_term::main();
     ok_struct::main();
     ok_reference::main();
     ok_generic::main();
