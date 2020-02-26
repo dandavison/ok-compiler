@@ -12,6 +12,7 @@ mod ok_struct_setter;
 mod ok_struct_wrapper;
 mod ok_syntect;
 mod ok_vector;
+mod ok_parse_u8;
 
 fn main() {
     ok_ansi_term::main();
@@ -28,4 +29,5 @@ fn main() {
     ok_iterator_min::main();
     ok_enum::main();
     ok_string::main();
+    ok_parse_u8::main();
 }
