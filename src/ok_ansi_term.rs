@@ -1,12 +1,57 @@
-extern crate ansi_term;
+use std::fmt::Write;
+
 use ansi_term;
-use ansi_term::Colour::{Blue, Yellow};
+use ansi_term::Colour::{Red, Yellow};
+
+fn f1() {
+    println!("This is in red: {}", Red.paint("a red string"));
+}
+
+fn f2() {
+    let style = ansi_term::Style::new().fg(Red).on(Yellow);
+    println!(
+        "This is red on yellow: {}",
+        style.paint("A red on yellow string")
+    );
+}
+
+fn f3() {
+    let style = ansi_term::Style::new().fg(Red).on(Yellow);
+    let mut ansi_strings = Vec::new();
+    ansi_strings.push(style.paint("A red on yellow string rendered from ANSIStrings."));
+    println!(
+        "{} {}",
+        ansi_term::ANSIStrings(&ansi_strings),
+        "This shouldn\'t be colored A."
+    );
+    println!(
+        "{} {}",
+        ansi_term::ANSIStrings(&ansi_strings),
+        "This shouldn\'t be colored B."
+    );
+}
+
+fn f4() {
+    let style = ansi_term::Style::new().fg(Red).on(Yellow);
+    let mut ansi_strings = Vec::new();
+    ansi_strings
+        .push(style.paint("A red on yellow string rendered from ANSIStrings put in a buffer."));
+
+    let mut output_buffer = String::new();
+
+    write!(
+        &mut output_buffer,
+        "{} {}",
+        ansi_term::ANSIStrings(&ansi_strings),
+        "This shouldn\'t be colored."
+    )
+    .unwrap();
+    println!("{}", &output_buffer);
+}
 
 pub fn main() {
-    let mut ansi_term_style = match Blue {
-        style::NO_COLOR => ansi_term::Style::default(),
-        color => to_ansi_color(color).normal(),
-    };
-
-    println!("{}", Blue.on(Yellow).paint("Blue on yellow!"));
+    f1();
+    f2();
+    f3();
+    f4();
 }
