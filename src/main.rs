@@ -2,9 +2,11 @@ mod ok_ansi_term;
 mod ok_cansi;
 mod ok_enum;
 mod ok_generic;
+mod ok_generic_struct_with_lifetime;
 mod ok_indexing;
 mod ok_iterator;
 mod ok_iterator_min;
+mod ok_parse_u8;
 mod ok_reference;
 mod ok_string;
 mod ok_struct;
@@ -12,7 +14,6 @@ mod ok_struct_setter;
 mod ok_struct_wrapper;
 mod ok_syntect;
 mod ok_vector;
-mod ok_parse_u8;
 
 fn main() {
     ok_ansi_term::main();
@@ -30,4 +31,5 @@ fn main() {
     ok_enum::main();
     ok_string::main();
     ok_parse_u8::main();
+    ok_generic_struct_with_lifetime::main();
 }
