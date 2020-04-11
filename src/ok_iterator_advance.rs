@@ -1,8 +1,6 @@
-use unicode_segmentation::UnicodeSegmentation;
-
 fn prepare(line: &str) -> String {
     if !line.is_empty() {
-        let mut line = line.graphemes(true);
+        let mut line = line.chars();
         let prefix = line.next().unwrap();
         let output_line = line.collect::<String>();
         format!("{}{}", prefix, output_line)
