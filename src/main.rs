@@ -5,6 +5,7 @@ mod ok_generic;
 mod ok_generic_struct_with_lifetime;
 mod ok_indexing;
 mod ok_iterator;
+mod ok_iterator_advance;
 mod ok_iterator_min;
 mod ok_parse_u8;
 mod ok_reference;
@@ -32,4 +33,5 @@ fn main() {
     ok_string::main();
     ok_parse_u8::main();
     ok_generic_struct_with_lifetime::main();
+    ok_iterator_advance::main();
 }
