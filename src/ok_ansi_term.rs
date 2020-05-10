@@ -49,9 +49,14 @@ fn f4() {
     println!("{}", &output_buffer);
 }
 
+fn f5() {
+    let style = ansi_term::Style::new().on(Yellow);
+    let mut ansi_strings = Vec::new();
+    ansi_strings.push(style.paint("|"));
+    ansi_strings.push(style.paint("|"));
+    println!("{}", ansi_term::ANSIStrings(&ansi_strings));
+}
+
 pub fn main() {
-    f1();
-    f2();
-    f3();
-    f4();
+    f5();
 }
