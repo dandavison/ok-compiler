@@ -8,6 +8,7 @@ mod ok_iterator;
 mod ok_iterator_advance;
 mod ok_iterator_min;
 mod ok_parse_u8;
+mod ok_powerset;
 mod ok_reference;
 mod ok_string;
 mod ok_struct;
@@ -34,4 +35,5 @@ fn main() {
     ok_parse_u8::main();
     ok_generic_struct_with_lifetime::main();
     ok_iterator_advance::main();
+    ok_powerset::main();
 }
