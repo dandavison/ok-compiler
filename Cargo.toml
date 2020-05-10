@@ -6,6 +6,7 @@ edition = "2018"
 
 [dependencies]
 ansi_term = "^0.12.1"
+bitflags = "1.2.1"
 bit-set = "0.5.2"
 cansi = "2.0.0"
 syntect = "3.2"
