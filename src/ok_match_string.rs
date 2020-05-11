@@ -1,11 +1,12 @@
-fn f(s: &str) {
+fn f(s: &str) -> String {
     match s.to_lowercase().as_ref() {
-        "none" => println!("Got none"),
-        s => println!("Got something else: {}", s),
-    };
+        "none" => "Got none",
+        s => s,
+    }
+    .to_string()
 }
 
 pub fn main() {
-    f("NONE");
-    f("SOMETHING");
+    println!("{}", f("NONE"));
+    println!("{}", f("SOMETHING"));
 }
