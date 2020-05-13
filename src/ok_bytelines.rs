@@ -1,6 +1,6 @@
 use bytelines::ByteLinesReader;
 use std::fs::File;
-use std::io::{self, BufRead, BufReader};
+use std::io::{self, BufReader};
 
 fn f1() {
     let file = File::open("./src/ok_bytelines.rs").unwrap();
@@ -11,13 +11,13 @@ fn f1() {
     }
 }
 
-#[allow(dead_code)]
 fn f2() {
-    for (i, line) in io::stdin().lock().lines().enumerate() {
-        println!("{}: {}", i, line.unwrap());
+    for line in io::stdin().lock().byte_lines() {
+        println!("{:?}", line.unwrap());
     }
 }
 
 pub fn main() {
     f1();
+    f2();
 }
