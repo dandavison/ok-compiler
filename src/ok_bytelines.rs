@@ -12,7 +12,9 @@ fn f1() {
 }
 
 fn f2() {
-    for line in io::stdin().lock().byte_lines() {
+    let stdin = io::stdin();
+    let mut lines = stdin.lock().byte_lines();
+    while let Some(line) = lines.next() {
         println!("{:?}", line.unwrap());
     }
 }
