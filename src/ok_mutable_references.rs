@@ -7,15 +7,15 @@ fn f1_caller(x: &mut u8) {
     f1(x);
 }
 
-fn f2(x: &mut Option<&mut u8>) {
+fn f2(x: Option<&mut u8>) {
     if let Some(x) = x {
-        **x += 1;
+        *x += 1;
     }
 }
 
-fn f2_caller(x: &mut Option<&mut u8>) {
-    f2(&mut x); //
-    f2(&mut x); // value used here after move
+fn f2_caller(x: Option<&mut u8>) {
+    f2(x);
+    f2(x); // value used here after move
 }
 
 pub fn main() {
@@ -25,8 +25,8 @@ pub fn main() {
     dbg!(i);
     f1_caller(&mut i);
     dbg!(i);
-    f2(&mut Some(&mut i));
+    f2(Some(&mut i));
     dbg!(i);
-    f2_caller(&mut Some(&mut i));
+    f2_caller(Some(&mut i));
     dbg!(i);
 }
