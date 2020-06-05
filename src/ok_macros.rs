@@ -16,10 +16,14 @@ macro_rules! set_fields {
     };
 }
 
-pub fn main() {
+fn f() {
     let mut s = S::default();
     set_fields!([(field_1, "val_11"), (field_2, "val_21")], &mut s);
     println!("{:?}", s);
     set_fields!([(field_1, "val_12"), (field_2, "val_22"),], &mut s);
     println!("{:?}", s);
+}
+
+pub fn main() {
+    f();
 }
