@@ -11,6 +11,19 @@ fn ff() {
     f(slice);
 }
 
+fn g(strings: &Iterator<Item = &str>) {
+    for s in strings.into_iter() {
+        println!("{}", s);
+    }
+}
+
+fn gg() {
+    g(&["a"].iter().copied());
+    let v1: Vec<String> = vec!["b".to_string()];
+    g(&v1.iter().map(String::as_ref));
+}
+
 pub fn main() {
-    ff()
+    ff();
+    gg(); // Does not compile
 }
