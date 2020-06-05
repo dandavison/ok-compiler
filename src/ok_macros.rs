@@ -1,9 +1,19 @@
-macro_rules! process_tuples {
-    ([$(($field_1:expr, $field_2:expr)),* ], $arg2:expr) => {
-        $(println!("field_1 = {}, field_2 = {}, arg2 = {}", $field_1, $field_2, $arg2);)*
+#[derive(Default, Debug)]
+struct S<'a> {
+    field_1: &'a str,
+    field_2: &'a str,
+}
+
+macro_rules! set_fields {
+    ([$(($field_name:ident, $val:expr)),* ], $the_struct:expr) => {
+        $(
+            $the_struct.$field_name = $val;
+        )*
     };
 }
 
 pub fn main() {
-    process_tuples!([("a11", "a12"), ("a21", "a22")], "hello");
+    let mut s = S::default();
+    set_fields!([(field_1, "val_1"), (field_2, "val_2")], &mut s);
+    println!("{:?}", s);
 }
