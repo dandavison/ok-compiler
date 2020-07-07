@@ -10,4 +10,5 @@ pub fn main() {
     let alphabet: [char; 3] = ['a', 'b', 'c'];
     println!("{:?}", alphabet[1]);
     use_alphabet(&alphabet);
+    println!("{:?}", "   ".split_whitespace().collect::<Vec<&str>>());
 }
