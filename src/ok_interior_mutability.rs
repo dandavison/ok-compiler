@@ -25,9 +25,8 @@ struct MyThing {
 
 impl MyThing {
     fn advance_state_machine(&mut self) {
-        // cannot borrow `*self` as mutable more than once at a time
-        let machine = &mut self.state_machine_from_3rd_party_lib; // first mutable borrow occurs here
-        machine.notify_client(self); // second mutable borrow occurs here
+        let machine = &mut self.state_machine_from_3rd_party_lib;
+        machine.notify_client(self);
     }
 }
 
