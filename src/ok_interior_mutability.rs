@@ -23,14 +23,20 @@ struct MyThing {
     data: usize,
 }
 
+struct ScratchPad {
+    data: usize,
+}
+
 impl MyThing {
     fn advance_state_machine(&mut self) {
         let machine = &mut self.state_machine_from_3rd_party_lib;
-        machine.notify_client(self);
+        let mut scratchpad = ScratchPad { data: 0 };
+        machine.notify_client(&mut scratchpad);
+        self.data += scratchpad.data;
     }
 }
 
-impl Client for MyThing {
+impl Client for ScratchPad {
     fn mutate(&mut self) {
         self.data += 1;
     }
