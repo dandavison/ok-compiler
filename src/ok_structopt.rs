@@ -9,6 +9,8 @@ struct Opt {
     #[structopt(short, long)]
     debug: bool,
 
+    #[structopt(long = "paging", default_value = "auto")]
+    pub paging_mode: String,
     /// Set speed
     // we don't want to name it "speed", need to look smart
     #[structopt(short = "v", long = "velocity", default_value = "42")]
@@ -32,6 +34,5 @@ struct Opt {
 }
 
 pub fn main() {
-    let opt = Opt::from_args();
-    println!("{:?}", opt);
+    println!("{:?}", Opt::clap().get_matches());
 }
