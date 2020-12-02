@@ -1,4 +1,7 @@
 use std::io::Cursor;
+use std::io::Read;
+use std::io::Write;
+use std::io::{Seek, SeekFrom};
 
 fn read_string() {
     let curs = Cursor::new(
@@ -22,6 +25,17 @@ index f38589a..0f1bb83 100644
     println!("{:?}", curs);
 }
 
+fn read_to_string() {
+    let mut curs = Cursor::new(vec![0; 1]);
+    write!(curs, "a").unwrap();
+    dbg!(curs.get_ref());
+    let mut s = String::new();
+    curs.seek(SeekFrom::Start(0)).unwrap();
+    curs.read_to_string(&mut s).unwrap();
+    dbg!(s);
+}
+
 pub fn main() {
     read_string();
+    read_to_string()
 }
