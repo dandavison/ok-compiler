@@ -1,6 +1,6 @@
 use std::io::Cursor;
 
-pub fn main() {
+fn read_string() {
     let curs = Cursor::new(
         b"\
 diff --git a/example.rs b/example.rs
@@ -20,4 +20,8 @@ index f38589a..0f1bb83 100644
         .to_vec(),
     );
     println!("{:?}", curs);
+}
+
+pub fn main() {
+    read_string();
 }
