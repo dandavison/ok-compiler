@@ -9,8 +9,6 @@ struct Opt {
     #[structopt(short, long)]
     debug: bool,
 
-    #[structopt(long = "paging", default_value = "auto")]
-    pub paging_mode: String,
     /// Set speed
     // we don't want to name it "speed", need to look smart
     #[structopt(short = "v", long = "velocity", default_value = "42")]
@@ -28,11 +26,12 @@ struct Opt {
     #[structopt(short)]
     out_type: String,
 
-    /// File name: only required when `out` is set to `file`
-    #[structopt(name = "FILE", required_if("out_type", "file"))]
-    file_name: String,
+    /// File name: only required when `out-type` is set to `file`
+    #[structopt(name = "FILE", required_if("out-type", "file"))]
+    file_name: Option<String>,
 }
 
 pub fn main() {
-    println!("{:?}", Opt::clap().get_matches());
+    let opt = Opt::from_args();
+    println!("{:?}", opt);
 }
