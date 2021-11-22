@@ -29,6 +29,20 @@ struct Opt {
     /// File name: only required when `out-type` is set to `file`
     #[structopt(name = "FILE", required_if("out-type", "file"))]
     file_name: Option<String>,
+
+    #[structopt(subcommand)]
+    sub: Option<Subcommands>,
+}
+
+#[derive(Debug, PartialEq, StructOpt)]
+enum Subcommands {
+    // normal subcommand
+    // Add,
+
+    // `external_subcommand` tells structopt to put
+    // all the extra arguments into this Vec
+    #[structopt(external_subcommand)]
+    Other(Vec<String>),
 }
 
 pub fn main() {
