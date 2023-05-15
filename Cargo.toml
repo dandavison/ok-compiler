@@ -10,6 +10,7 @@ bitflags = "1.2.1"
 bit-set = "0.5.2"
 bytelines = "2.2.2"
 cansi = "2.0.0"
+clap = { version = "3.0.5", features = ["derive"] }
 lazy_static = "1.4"
 regex = "1.3.9"
 syntect = "3.2"
